@@ -1,0 +1,110 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("../imgs/fondo.jpg");
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	/* height: 100vh; */
+	padding: 100px;
+}
+
+/* Formulario */
+#preview {
+	height: 200px;
+	background-image: url("../imgs/lion.svg");
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/* Tabla de Participantes */
+
+#animalesTabla {
+	height: 100%;
+	background: #f0f0f0;
+}
+
+#animalesTabla div div {
+	transition: all 200ms;
+}
+
+#animalesTabla div > div:hover {
+	box-shadow: 0px 1px 5px 1px;
+}
+
+.participante {
+	max-width: 30%;
+}
+
+/* Modal */
+
+.modal-dialog {
+	max-width: 85% !important;
+}
+/* Labels */
+.row label {
+	cursor: pointer;
+}
+/* Animal Preview Images */
+.animal_preview_image {
+	max-width: 100%;
+	height: 250px;
+}
+.animal_card_audio {
+	max-width: 100%;
+}
+.card-img-top {
+	max-height: 200px;
+}
+.animal_sound_div {
+	background-color: #7b7979;
+	min-height: 5px;
+}
+.animal_sound_div i {
+	cursor: pointer;
+}
+.animal_sound_on_icon {
+	color: #fff;
+	max-width: 100%;
+}
+.animal_sound_off_icon {
+	color: #fff;
+	max-width: 100%;
+	display: block;
+}
+/* Modal */
+.modal-content {
+	max-width: 75%;
+	max-height: 100%;
+	border: 15px solid;
+}
+.modal-content img {
+	max-width: 100%;
+	min-height: 400px;
+}
+
+.edadModal {
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+}
+.comentariosTitleModal {
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+}
+.comentariosModal {
+	font-size: 15px;
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.hrModal {
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}

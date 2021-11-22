@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba - Animales Salvajes</title>
+    <!-- Font Awesome CDN v5.15.4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- Bootstrap v5.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Loading Spinner -->
+      <!-- <section class="d-flex align-items-center my-5 d-none" id="loading">
+        <strong>Cargando...</strong>
+        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+      </section> -->
+      <div class="row">
+        <p class="alert alert-danger d-none" id="error" role="alert">Asegurate de completar todos los campos!</p>
+      <!-- Animales en Investigación -->
+      <div class="col-12 card col-sm-7 text-center p-4 bg-warning shadow-lg" id="tablaAnimalesEnInvestigacion">
+        <h3>Animales en investigación</h3>
+        <hr class="my-0 bg-dark w-75 mx-auto" />
+        <div id="animalesTabla" class="my-3 p-3 d-flex align-items-start justify-content-start flex-wrap bg-dark">
+        </div>
+      </div>
+      <!-- Template Animales -->
+      <template id="animalesTemplate">
+        <section class="card mx-3 my-3">
+          <img src="assets/imgs/Leon.png" class="card-img-top mod-cus" alt="...">
+          <div class="card-body animal_sound_div">
+            <i class="fas fa-volume-up fa-3x animal_sound_on_icon" title="on"><audio src="..." class="animal_card_audio" id="animal_card_audio"></audio></i>
+            <i class="fas fa-volume-mute fa-3x animal_sound_off_icon d-none" title="off"></i>
+          </div>
+        </section>
+      </template>
+      <!-- Registro Animal -->
+      <div class="card col-12 col-sm-4 bg-warning text-dark offset-1 shadow-lg">
+        <div class="card-body">
+          <h5 class="card-title">Registrar animal en:</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Ingrese los datos del animal</h6>
+          <hr />
+          <div class="card-text my-3">
+            <div class="form-group">
+
+              <!-- Nombre del Animal -->
+              <label for="animal">Nombre del animal:</label>
+              <select class="form-select bg-dark text-white" id="animal">
+                <option disabled selected>Seleccione un animal</option>
+                <option value="Leon">León</option>
+                <option value="Lobo">Lobo</option>
+                <option value="Oso">Oso</option>
+                <option value="Serpiente">Serpiente</option>
+                <option value="Aguila">Águila</option>
+              </select>
+            </div>
+
+            <!-- Años de edad estimados Animal -->
+            <div class="form-group">
+              <label for="edad">Años de edad estimados:</label>
+              <select class="form-select bg-dark text-white" id="edad">
+                <option disabled selected>Seleccione un rango de años</option>
+                <option value="0 - 1 años">0 - 1 años</option>
+                <option value="1 - 3 años">1 - 3 años</option>
+                <option value="3 - 5 años">3 - 5 años</option>
+                <option value="5 - 8 años">5 - 8 años</option>
+                <option value="8 - 10 años">8 - 10 años</option>
+                <option value="Más de 10 años">Más de 10 años</option>
+              </select>
+            </div>
+
+            <!-- Comentarios Animal -->
+            <div class="form-group my-3">
+              <label for="comentarios">Comentarios:</label>
+              <textarea rows="5" class="form-control shadow-lg bg-dark text-white" id="comentarios"></textarea>
+            </div>
+
+            <!-- Preview Animal -->
+            <div class="p-5 card bg-dark">
+              <div id="preview"></div>
+            </div>
+          </div>
+
+          <!-- Botón Agregar Animal -->
+          <btn class="btn btn-light d-block" id="btnRegistrar">Agregar</btn>
+        </div>
+      </div>
+    </div>
+    <!-- Audio Animal -->
+    <audio id="player" class="d-none"></audio>
+
+    <!-- Modal Animal -->
+    <div class="modal fade" id="animalModal" tabindex="-1" aria-labelledby="animalModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable w-25" role="document">
+      </div>
+    </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="module" src="assets/js/index.js"></script>
+  </body>
+</html>

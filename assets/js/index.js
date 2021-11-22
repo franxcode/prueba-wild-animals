@@ -9,6 +9,7 @@ import { Leon, Lobo, Oso, Serpiente, Aguila } from "./animales.js";
 		const data = await res.json();
 		registerAnimalAndCreateInstance(data);
 		getAnimalImagePreview(data);
+		// addAnimal(data);
 	} catch (error) {
 		console.log(error);
 	} finally {
@@ -33,10 +34,10 @@ const getAnimalImagePreview = (data) => {
 	animal.addEventListener("change", (e) => {
 		const findImage = animales.find((animal) => animal.name === e.target.value).imagen;
 		document.getElementById("preview").setAttribute("class", "mx-auto mb-5");
-		preview.innerHTML = `<img src="/assets/imgs/${findImage}" alt="${e.target.value}" class="animal_preview_image">`;
+		preview.innerHTML = `<img src="assets/imgs/${findImage}" alt="${e.target.value}" class="animal_preview_image">`;
 	});
 };
-
+//
 // Register animal once "Agregar" button is clicked.
 const registerAnimalAndCreateInstance = (data) => {
 	const btnRegistrar = document.getElementById("btnRegistrar");
@@ -55,15 +56,15 @@ const registerAnimalAndCreateInstance = (data) => {
 			const instanceImage = animales.find((animal) => animal.name === animalx.value).imagen;
 			const instanceSound = animales.find((animal) => animal.name === animalx.value).sonido;
 			if (animalx.value === "Leon") {
-				newAnimal = new Leon(`${animalx.value}`, `${edad.value}`, `/assets/imgs/${instanceImage}`, `${comentarios.value}`, `/assets/sounds/${instanceSound}`);
+				newAnimal = new Leon(`${animalx.value}`, `${edad.value}`, `assets/imgs/${instanceImage}`, `${comentarios.value}`, `assets/sounds/${instanceSound}`);
 			} else if (animalx.value === "Lobo") {
-				newAnimal = new Lobo(`${animalx.value}`, `${edad.value}`, `/assets/imgs/${instanceImage}`, `${comentarios.value}`, `/assets/sounds/${instanceSound}`);
+				newAnimal = new Lobo(`${animalx.value}`, `${edad.value}`, `assets/imgs/${instanceImage}`, `${comentarios.value}`, `assets/sounds/${instanceSound}`);
 			} else if (animalx.value === "Oso") {
-				newAnimal = new Oso(`${animalx.value}`, `${edad.value}`, `/assets/imgs/${instanceImage}`, `${comentarios.value}`, `/assets/sounds/${instanceSound}`);
+				newAnimal = new Oso(`${animalx.value}`, `${edad.value}`, `assets/imgs/${instanceImage}`, `${comentarios.value}`, `assets/sounds/${instanceSound}`);
 			} else if (animalx.value === "Serpiente") {
-				newAnimal = new Serpiente(`${animalx.value}`, `${edad.value}`, `/assets/imgs/${instanceImage}`, `${comentarios.value}`, `/assets/sounds/${instanceSound}`);
+				newAnimal = new Serpiente(`${animalx.value}`, `${edad.value}`, `assets/imgs/${instanceImage}`, `${comentarios.value}`, `assets/sounds/${instanceSound}`);
 			} else if (animalx.value === "Aguila") {
-				newAnimal = new Aguila(`${animalx.value}`, `${edad.value}`, `/assets/imgs/${instanceImage}`, `${comentarios.value}`, `/assets/sounds/${instanceSound}`);
+				newAnimal = new Aguila(`${animalx.value}`, `${edad.value}`, `assets/imgs/${instanceImage}`, `${comentarios.value}`, `assets/sounds/${instanceSound}`);
 			}
 			// Perform validations before allowing user to register animal.
 			if (animalx.value != "Seleccione un animal" && edad.value != "Seleccione un rango de años" && comentarios.value != "" && instanceImage != "") {
@@ -72,7 +73,7 @@ const registerAnimalAndCreateInstance = (data) => {
 				animalx.selectedIndex = 0;
 				edad.selectedIndex = 0;
 				comentarios.value = "";
-				preview.innerHTML = `<img src="/assets/imgs/lion.svg" style="background-position: center top; background-size: contain; background-repeat: no-repeat;" height="200px">`;
+				preview.innerHTML = `<img src="assets/imgs/lion.svg" style="background-position: center top; background-size: contain; background-repeat: no-repeat;" height="200px">`;
 			} else {
 				document.getElementById("error").classList.remove("d-none");
 				setTimeout(() => {
